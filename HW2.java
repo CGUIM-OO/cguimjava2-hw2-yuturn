@@ -71,6 +71,16 @@ class Deck{
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
 		cards=new ArrayList<Card>();
+		for(int f=1;f<= nDeck ; f++){
+			
+			
+		for (int s = 1;s<5;s++){
+			for (int r = 1;r<14;r++){
+				Card card=new Card(s,r);
+				cards.add(card);			
+						}
+		}
+		}
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -81,11 +91,20 @@ class Deck{
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
 	public void printDeck(){
+		for (int i=0;i<cards.size();i++){
+			cards.get(i).printCard();
+						
+		}
 		//Hint: print all items in ArrayList<Card> cards, 
+
+			
+			
+		
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
 	}
 	public ArrayList<Card> getAllCards(){
+		
 		return cards;
 	}
 }
@@ -106,7 +125,57 @@ class Card{
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
-
+		if (rank==1){
+			 if(suit==1){
+				 System.out.println("Clubs"+","+"Ace");	 }
+			 if(suit==2){
+				 System.out.println("Diamonds"+","+"Ace");	 }
+			 if(suit==3){
+				 System.out.println("Hearts"+","+"Ace");	 }
+			 if(suit==4){
+				 System.out.println("Spades"+","+"Ace");	 }
+			 		}
+		else if (rank==11){
+			if(suit==1){
+				 System.out.println("Clubs"+","+"J");	 }
+			 if(suit==2){
+				 System.out.println("Diamonds"+","+"J");	 }
+			 if(suit==3){
+				 System.out.println("Hearts"+","+"J");	 }
+			 if(suit==4){
+				 System.out.println("Spades"+","+"J");	 }
+					}
+		else if (rank==12){
+			if(suit==1){
+				 System.out.println("Clubs"+","+"Q");	 }
+			 if(suit==2){
+				 System.out.println("Diamonds"+","+"Q");	 }
+			 if(suit==3){
+				 System.out.println("Hearts"+","+"Q");	 }
+			 if(suit==4){
+				 System.out.println("Spades"+","+"Q");	 }
+					}
+		else if (rank==13){
+			if(suit==1){
+				 System.out.println("Clubs"+","+"K");	 }
+			 if(suit==2){
+				 System.out.println("Diamonds"+","+"K");	 }
+			 if(suit==3){
+				 System.out.println("Hearts"+","+"K");	 }
+			 if(suit==4){
+				 System.out.println("Spades"+","+"K");	 }			 
+					}
+		else{
+			if(suit==1){
+				System.out.println("Clubs"+","+ rank);	 }
+			if(suit==2){
+				 System.out.println("Diamonds"+","+rank);	 }
+			 if(suit==3){
+				 System.out.println("Hearts"+","+rank);	 }
+			 if(suit==4){
+				 System.out.println("Spades"+","+rank);	 }	
+		}
+			
 	}
 	public int getSuit(){
 		return suit;
